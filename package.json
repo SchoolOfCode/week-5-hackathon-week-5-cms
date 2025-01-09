@@ -1,0 +1,18 @@
+{
+    "name": "library-system-hackathon",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+      "start": "node bin/www.js",
+      "dev": "node -r dotenv/config --watch bin/www.js",
+      "reset-database": "node -r dotenv/config db/scripts/reset-database.js"
+    },
+    "dependencies": {
+      "dotenv": "^16.4.7",
+      "express": "^4.21.2",
+      "morgan": "^1.10.0",
+      "pg": "^8.13.1"
+    }
+  }
+  
