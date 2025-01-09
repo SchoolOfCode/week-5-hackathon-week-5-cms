@@ -2,8 +2,9 @@
 import express from "express";
 import morgan from "morgan";
 
-// import authorRouter from "./routes/authors.js";
-// import bookRouter from "./routes/books.js";
+import memberRouter from "./routes/members.js";
+import bookRouter from "./routes/books.js";
+import loanRouter from "./routes/loans.js";
 
 // Initialize the express app
 const app = express();
@@ -13,7 +14,8 @@ app.use(morgan("dev")); // Morgan is used for logging HTTP requests to the conso
 app.use(express.json()); // express.json() middleware is used to parse incoming JSON requests
 
 // Use sub-routers
-// app.use("/authors", authorRouter);
-// app.use("/books", bookRouter);
+app.use("/members", memberRouter);
+app.use("/books", bookRouter);
+app.use("/loans", loanRouter);
 
 export default app;

@@ -1,39 +1,39 @@
 import { pool } from "../db/index.js";
 
-export async function fetchAllAuthors() {
+export async function fetchAllMembers() {
 //query the database
-//fetch all authors
-//return the all authors
+//fetch all members
+//return the all members
 //store them in a variable
 
-const allAuthors = await pool.query(
-    'SELECT * FROM authors'
+const allMembers = await pool.query(
+    'SELECT * FROM members'
     );
 
-return allAuthors.rows;
+return allMembers.rows;
 }
 
-export async function fetchAuthorById(id) {
+export async function fetchMemberById(id) {
     //query the database using ID
-    //fetch author by his unique id
-    //return the author
-    //store the author in variable
+    //fetch member by his unique id
+    //return the member
+    //store in variable
 
-    const allAuthors = await pool.query(
-        'SELECT * FROM authors WHERE id = $1', [id]
+    const allMembers = await pool.query(
+        'SELECT * FROM members WHERE id = $1', [id]
     );
 
-    return allAuthors.rows
+    return allMembers.rows
 }
 
-export async function insertAuthor(first_name, last_name) {
+export async function insertMember(member_id, name, email, membership_date) {
     //into the database
-    //create a variable to store the new author with the 2 values (first_name, last_name)
-    // return new author
-    const newAuthor = await pool.query('INSERT INTO authors(first_name, last_name) VALUES ($1, $2)',[first_name, last_name]);
-    return newAuthor.rows
+    //create a variable to store the new member and values
+    // return new member
+    const newMember = await pool.query('INSERT INTO members(member_id, name, email, membership_date) VALUES ($1, $2, $3, $4)',[member_id, name, email, membership_date]);
+    return newMember.rows
 }
 
-export async function modifyAuthorById(id, first_name, last_name) {}
+export async function modifyMemberById(id, member_id, name, email, membership_date) {}
 
-export async function removeAuthorById(id) {}
+export async function removeMemberById(id) {}

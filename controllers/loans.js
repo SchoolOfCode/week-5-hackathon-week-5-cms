@@ -4,7 +4,7 @@ import {
     insertLoan,
     modifyLoanById,
     removeLoanById,
-  } from "../models/books.js";
+  } from "../models/loans.js";
   
   export async function getLoans(req, res) {
     try {

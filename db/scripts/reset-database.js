@@ -18,7 +18,7 @@ async function resetDatabase() {
         title VARCHAR(255) NOT NULL,
         author VARCHAR (255) NOT NULL,
         genre VARCHAR (255) NOT NULL,
-        published_year INT,
+        published_year INT
       );
     `);
     
@@ -29,7 +29,7 @@ async function resetDatabase() {
           member_id INT,
           name VARCHAR(255) NOT NULL,
           email VARCHAR(255) NOT NULL,
-          membership_date DATE,
+          membership_date DATE
         );
       `);
 
@@ -40,8 +40,8 @@ async function resetDatabase() {
           loan_id INT,
           book_id INT,
           member_id INT,
-          loan_date DATE
-          return_date DATE,
+          loan_date DATE,
+          return_date DATE
         );
       `);
     

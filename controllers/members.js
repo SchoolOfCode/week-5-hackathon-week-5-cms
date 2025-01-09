@@ -4,11 +4,11 @@ import {
     insertMember,
     modifyMemberById,
     removeMemberById,
-  } from "../models/books.js";
+  } from "../models/members.js";
   
   export async function getMembers(req, res) {
     try {
-      const memberss = await fetchAllMembers();
+      const members = await fetchAllMembers();
       res.status(200).json({ status: "success", data: members });
     } catch (error) {
       res.status(500).json({ status: "error", message: error.message });
