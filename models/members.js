@@ -30,7 +30,7 @@ export async function insertMember(member_id, name, email, membership_date) {
     //into the database
     //create a variable to store the new member and values
     // return new member
-    const newMember = await pool.query('INSERT INTO members(member_id, name, email, membership_date) VALUES ($1, $2, $3, $4)',[member_id, name, email, membership_date]);
+    const newMember = await pool.query('INSERT INTO members(member_id, name, email, membership_date) VALUES ($1, $2, $3, $4) RETURNING *',[member_id, name, email, membership_date]);
     return newMember.rows
 }
 
