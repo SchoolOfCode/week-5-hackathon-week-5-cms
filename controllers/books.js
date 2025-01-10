@@ -32,13 +32,13 @@ import {
   
   export async function createBook(req, res) {
     try {
-      const { title, author_id, published_date } = req.body;
-      if (!title || !author_id || !published_date) {
+      const { book_id, title, author, genre, published_year } = req.body;
+      if (!book_id || !title || !author || !genre || !published_year) {
         return res
           .status(400)
           .json({ status: "fail", message: "Missing required fields" });
       }
-      const book = await insertBook(title, author_id, published_date);
+      const book = await insertBook(book_id, title, author, genre, published_year);
       res.status(201).json({ status: "success", data: book });
     } catch (error) {
       res.status(500).json({ status: "error", message: error.message });

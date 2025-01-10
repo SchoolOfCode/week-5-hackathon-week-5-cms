@@ -16,7 +16,7 @@ export async function fetchLoanById(id) {
 }
 
 export async function insertLoan(loan_id, book_id, member_id, loan_date, return_date) {
-    const newLoan = await pool.query('INSERT INTO loan(loan_id, book_id, member_id, loan_date, return_date) VALUES ($1, $2, $3, $4, $5) RETURNING *',[loan_id, book_id, member_id, loan_date, return_date]);
+    const newLoan = await pool.query('INSERT INTO loans(loan_id, book_id, member_id, loan_date, return_date) VALUES ($1, $2, $3, $4, $5) RETURNING *',[loan_id, book_id, member_id, loan_date, return_date]);
     return newLoan.rows
 }
 

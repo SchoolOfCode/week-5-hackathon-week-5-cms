@@ -17,7 +17,7 @@ export async function fetchBookById(id) {
 }
 
 export async function insertBook(book_id, title, author, genre, published_year) {
-    const newBook = await pool.query('INSERT INTO book(book_id, title, author, genre, published_year) VALUES ($1, $2, $3, $4, $5) RETURNING *',[book_id, title, author, genre, published_year]);
+    const newBook = await pool.query('INSERT INTO books(book_id, title, author, genre, published_year) VALUES ($1, $2, $3, $4, $5) RETURNING *',[book_id, title, author, genre, published_year]);
     return newBook.rows
 }
 
